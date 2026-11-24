@@ -21,21 +21,24 @@ public class LoginTest {
     private WebDriver driver;
 
     @BeforeEach
-    public void setUp() throws Exception {
+void setUp() {
+    ChromeOptions options = new ChromeOptions();
 
-        // TODO 1: Configure ChromeOptions
-        ChromeOptions options = new ChromeOptions();
+    options.setBinary(
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    );
 
-        // TODO 2: Initialize ChromeDriver
-        driver = new ChromeDriver(options);
+    options.addArguments("--headless=new");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--no-sandbox");
 
-        // TODO 3: Maximize browser
-        driver.manage().window().maximize();
+    driver = new ChromeDriver(options);
 
-        // TODO 4: Open login application
-        Path page = Paths.get("webapp", "index.html").toAbsolutePath();
-        driver.get(page.toUri().toString());
-    }
+    driver.manage().window().maximize();
+
+    Path page = Paths.get("webapp", "index.html").toAbsolutePath();
+    driver.get(page.toUri().toString());
+}
 
     @Test
     public void validLoginShouldShowSuccessMessage() throws Exception {
