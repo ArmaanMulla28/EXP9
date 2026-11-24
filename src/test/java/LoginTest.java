@@ -44,10 +44,10 @@ void setUp() {
     public void validLoginShouldShowSuccessMessage() throws Exception {
 
         // TODO 5: Enter valid username
-        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("username")).sendKeys("student");
 
         // TODO 6: Enter valid password
-        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.id("password")).sendKeys("Selenium@123");
 
         // TODO 7: Click login button
         driver.findElement(By.id("loginBtn")).click();
