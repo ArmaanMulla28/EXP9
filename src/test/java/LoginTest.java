@@ -28,10 +28,11 @@ void setUp() {
         "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
     );
 
-    options.addArguments("--headless=new");
-    options.addArguments("--disable-gpu");
-    options.addArguments("--no-sandbox");
-
+   options.addArguments("--headless=new");
+options.addArguments("--disable-gpu");
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");
+options.addArguments("--user-data-dir=C:\\selenium\\chrome-profile");
     driver = new ChromeDriver(options);
 
     driver.manage().window().maximize();
